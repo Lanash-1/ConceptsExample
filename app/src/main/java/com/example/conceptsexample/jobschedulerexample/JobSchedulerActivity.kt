@@ -3,11 +3,13 @@ package com.example.conceptsexample.jobschedulerexample
 import android.app.job.JobInfo
 import android.app.job.JobScheduler
 import android.content.ComponentName
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.conceptsexample.R
+import com.example.conceptsexample.jobintentserviceexample.JobIntentServiceActivity
 
 class JobSchedulerActivity : AppCompatActivity() {
 
@@ -17,6 +19,12 @@ class JobSchedulerActivity : AppCompatActivity() {
 
         val startScheduleBtn = findViewById<Button>(R.id.schedule_job)
         val stopScheduleBtn = findViewById<Button>(R.id.stop_job)
+        val nextBtn = findViewById<Button>(R.id.nextBtn)
+
+        nextBtn.setOnClickListener {
+            val intent = Intent(this, JobIntentServiceActivity::class.java)
+            startActivity(intent)
+        }
 
         startScheduleBtn.setOnClickListener {
             val componentName = ComponentName(this, ExampleJobService::class.java)

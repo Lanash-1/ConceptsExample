@@ -16,6 +16,9 @@
         android:theme="@style/Theme.ConceptsExample"
         tools:targetApi="31">
         <activity
+            android:name=".JobIntentServiceActivity"
+            android:exported="false" />
+        <activity
             android:name=".jobschedulerexample.JobSchedulerActivity"
             android:exported="false" />
         <activity
@@ -33,8 +36,9 @@
 
         <service android:name=".intentservicesexample.MyIntentService" />
         <service android:name=".intentservicesexample.AnotherIntentService" />
-        <service android:name=".jobschedulerexample.ExampleJobService"
-            android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service
+            android:name=".jobschedulerexample.ExampleJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
     </application>
 
 </manifest>

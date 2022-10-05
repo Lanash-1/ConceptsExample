@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.conceptsexample">
 
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ConceptsExample"
         tools:targetApi="31">
+        <activity
+            android:name=".jobschedulerexample.JobSchedulerActivity"
+            android:exported="false" />
         <activity
             android:name=".intentservicesexample.IntentServicesActivity"
             android:exported="false" />
@@ -25,6 +30,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service android:name=".intentservicesexample.MyIntentService" />
+        <service android:name=".intentservicesexample.AnotherIntentService" />
+        <service android:name=".jobschedulerexample.ExampleJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE"/>
     </application>
 
 </manifest>

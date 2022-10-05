@@ -5,20 +5,23 @@ import android.content.Intent
 import android.util.Log
 import java.lang.Exception
 
-class MyIntentService: IntentService("MyIntentService") {
+class AnotherIntentService: IntentService("AnotherIntentService") {
 
     init {
         instance = this
     }
 
     companion object {
-        private lateinit var instance: MyIntentService
+        private var instance: AnotherIntentService? = null
         var isRunning = false
 
         fun stopService(){
-            Log.d("MyIntentService", "Service is stopping...")
-            isRunning = false
-            instance.stopSelf()
+            if(instance != null){
+                Log.d("AnotherIntentService", "Another Service is stopping...")
+                isRunning = false
+                instance!!.stopSelf()
+            }
+
         }
     }
 
@@ -26,7 +29,7 @@ class MyIntentService: IntentService("MyIntentService") {
         try {
             isRunning = true
             while(isRunning){
-                Log.d("MyIntentService", "Service is running")
+                Log.d("AnotherIntentService", "Another Service is running")
                 Thread.sleep(1000)
             }
         }catch (error: Exception){

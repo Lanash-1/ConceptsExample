@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.example.conceptsexample.R
+import com.example.conceptsexample.workmanagerexample.WorkManagerActivity
 
 
 class JobIntentServiceActivity : AppCompatActivity() {
@@ -18,6 +19,12 @@ class JobIntentServiceActivity : AppCompatActivity() {
 
         val enqueueBtn = findViewById<Button>(R.id.enqueueBtn)
         editText = findViewById(R.id.editTxt)
+
+        val nextBtn = findViewById<Button>(R.id.nextBtn)
+        nextBtn.setOnClickListener {
+            val intent = Intent(this, WorkManagerActivity::class.java)
+            startActivity(intent)
+        }
 
         enqueueBtn.setOnClickListener {
             val input: String = editText.getText().toString()

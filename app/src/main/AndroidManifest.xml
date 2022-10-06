@@ -4,6 +4,7 @@
     package="com.example.conceptsexample">
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
         android:allowBackup="true"
@@ -16,7 +17,7 @@
         android:theme="@style/Theme.ConceptsExample"
         tools:targetApi="31">
         <activity
-            android:name=".JobIntentServiceActivity"
+            android:name=".jobintentserviceexample.JobIntentServiceActivity"
             android:exported="false" />
         <activity
             android:name=".jobschedulerexample.JobSchedulerActivity"
@@ -39,6 +40,9 @@
         <service
             android:name=".jobschedulerexample.ExampleJobService"
             android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <service android:name=".jobintentserviceexample.ExampleJobIntentService"
+            android:permission="android.permission.BIND_JOB_SERVICE"/>
     </application>
 
 </manifest>

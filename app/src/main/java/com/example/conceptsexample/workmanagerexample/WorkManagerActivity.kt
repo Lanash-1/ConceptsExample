@@ -1,16 +1,24 @@
 package com.example.conceptsexample.workmanagerexample
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import androidx.work.*
 import com.example.conceptsexample.R
+import com.example.conceptsexample.practice.CustomExample
 import java.util.concurrent.TimeUnit
 
 class WorkManagerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_work_manager)
+
+        val nextBtn = findViewById<Button>(R.id.nextBtn)
+        nextBtn.setOnClickListener {
+            val intent = Intent(this, CustomExample::class.java)
+            startActivity(intent)
+        }
 
         val workBtn = findViewById<Button>(R.id.worker_btn)
 

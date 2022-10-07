@@ -12,6 +12,8 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.widget.SwitchCompat
 import com.example.conceptsexample.intentservicesexample.IntentServicesActivity
+import com.example.conceptsexample.practice.CustomExample
+import com.example.conceptsexample.practice.FirstExampleView
 
 
 class MainActivity : AppCompatActivity() {
@@ -39,7 +41,7 @@ class MainActivity : AppCompatActivity() {
 
         nextBtn.setOnClickListener {
             println("next")
-            val intent = Intent(this, IntentServicesActivity::class.java)
+            val intent = Intent(this, CustomExample::class.java)
             startActivity(intent)
         }
 

@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
     @Volatile
     private var stopThread: Boolean = false
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

@@ -3,4 +3,5 @@
     <string name="current_text">Current Text</string>
     <string name="start">start</string>
     <string name="stop">stop</string>
+    <string name="text_view_1">text view 1</string>
 </resources>
